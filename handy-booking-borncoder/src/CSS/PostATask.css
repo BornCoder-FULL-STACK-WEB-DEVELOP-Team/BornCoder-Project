@@ -62,3 +62,9 @@
   font-size: 18px;
   margin-top: 25px;
 }
+
+.taskSubmit:hover {
+  background-color: #3192ca;
+  border: 2px solid #3192ca;
+  color:rgb(235, 235, 235);
+}
