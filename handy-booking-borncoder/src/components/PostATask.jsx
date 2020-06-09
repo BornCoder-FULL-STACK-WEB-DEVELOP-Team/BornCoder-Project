@@ -16,14 +16,14 @@ class PostATask extends React.Component {
     alert('Your task: ' + this.state.taskName + 'had been posted!')
   }
 
-  handleResetClick = (event) => {
-    this.setState({
-      taskName: "Enter task name in-short",
-      taskType: "Cleaning",
-      taskDescription: "Please describe your task specifically!"
-    })
-    alert('Reset Successful!');
-  }
+  // handleResetClick = (event) => {
+  //   this.setState({
+  //     taskName: "Enter task name in-short",
+  //     taskType: "Cleaning",
+  //     taskDescription: "Please describe your task specifically!"
+  //   })
+  //   alert('Reset Successful!');
+  // }
 
   handleInputChange = (event) => {
     const target = event.target;
@@ -52,7 +52,7 @@ class PostATask extends React.Component {
             </select>
             <textarea className="taskDescription" name="taskDescription" value={this.state.taskDescription} onChange={this.handleInputChange} />
           </label>
-          <input className="reset" type="reset" onClick={this.handleResetClick} value="Reset" />
+          {/* <input className="reset" type="reset" onClick={this.handleResetClick} value="Reset" /> */}
           <input className="taskSubmit" type="submit" value="Post My Task" />
         </form>
       </div>

@@ -1,0 +1,28 @@
+ul,li{
+  list-style: none;
+}
+
+.starts,.starts ul{
+  float:left;
+}
+
+.starts{
+  padding-left:16px;
+  padding-top:7px;
+}
+.starts ul li{
+  float:left;
+  color:#ddd;
+  padding-right:3px;
+  font-size:28px;
+  cursor: pointer;
+}
+.starts ul li.on{
+  color:red;
+}
+.starts ul span{
+  display:inline;
+  float:left;
+  padding-left:10px;
+  margin-top: 10px;
+}
