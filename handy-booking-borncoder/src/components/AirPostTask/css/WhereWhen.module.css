@@ -1,0 +1,93 @@
+.background{
+  color: black;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 500px;
+  height: 500px;
+}
+
+.titleWrapper {
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+}
+
+.partTwo__Title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.closeButton {
+  position: relative;
+  float: right;
+  right: 3px;
+  top: 3px;
+}
+
+.progressContainer {
+  background-color: lightgray;
+  height: 3px;
+  padding: 0;
+}
+
+.progressFiller {
+  background-color: rgb(125, 179, 67);
+  height: 3px;
+  width: 66%;
+}
+
+.questionTitle {
+  font-size: 19px;
+  padding-left: 15px;
+  font-weight: 400;
+}
+
+.questionTips {
+  font-size: 12px;
+  padding-left: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.answerOne__wrapper {
+  padding-left: 15px;
+}
+
+.taskTitleInput {
+  height: 30px;
+  width: 460px
+}
+
+.answerTwo__wrapper {
+  padding-left: 15px;
+}
+
+.taskDetailInput {
+  height: 140px;
+  width: 460px;
+}
+
+.partOneButton {
+  text-align: center;
+  
+}
+
+.nextButton {
+  background-color: rgb(125, 179, 67);
+  color: white;
+  border: 0 solid rgb(125, 179, 67);
+  border-radius: 30px;
+  width: 300px;
+  height: 50px;
+}
