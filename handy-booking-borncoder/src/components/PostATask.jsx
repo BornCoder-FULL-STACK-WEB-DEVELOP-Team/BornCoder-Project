@@ -1,18 +1,44 @@
 import React from 'react';
-import '../CSS/PostATask.css';
+import styles from '../CSS/PostATask.module.css';
 
 class PostATask extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       taskName: "Enter task name in-short",
-      taskType: "Cleaning",
-      taskDescription: "Please describe your task specifically!"
+      taskType: "Personal",
+      taskDescription: "Please describe your task specifically!",
+      taskPrice: "",
     }
   }
 
   handleSubmitClick = (event) => {
     event.preventDefault();
+    let taskName = this.state.taskName;
+    let taskType = this.state.taskType;
+    let taskDescription = this.state.taskDescription;
+    let taskPrice = this.state.taskPrice;
+    let fetchOption = {
+      method: 'POST',
+      headers: {'Accept': 'application/json', 'Content-Type': 'application/json', },
+      body: {
+        '"taskName"': taskName,
+        '"typeName"': taskType,
+        '"description"': taskDescription,
+        '"budget"': taskPrice,
+      }
+    }
+
+
+    console.log(fetchOption);
+    let url = 'http://localhost:8080/hello';
+    //后端接口url；
+    fetch(url, fetchOption)
+    .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+        // 打印返还3位代码 401 404 or 200;
+      })
     alert('Your task: ' + this.state.taskName + 'had been posted!')
   }
 
@@ -36,24 +62,24 @@ class PostATask extends React.Component {
 
   render() {
     return(
-      <div className="container">
-        <div className="cardName">Post My Task</div>
-        <form className="postTask__form" onSubmit={this.handleSubmitClick}>
+      <div className={styles.container}>
+        <div className={styles.cardName}>Post My Task</div>
+        <form className={styles.postTask__form} onSubmit={this.handleSubmitClick}>
           <label>
-            <div className="taskName__wrapper">
-              <span className="taskName">Task Name:</span>
-              <input className="taskNameInput" name="taskName" type="text" value={this.state.taskName} onChange={this.handleInputChange} />
+            <div className={styles.taskName__wrapper}>
+              <span className={styles.taskName}>Task Name:</span>
+              <input className={styles.taskNameInput} name="taskName" type="text" value={this.state.taskName} onChange={this.handleInputChange} />
+              <span className={styles.taskPrice}>How much you would pay (AUD):</span>
+              <input className={styles.taskPriceInput} name="taskPrice" type="number" value={this.state.taskPrice} onChange={this.handleInputChange} />
             </div>
-            <select className="taskType" name="taskType" value={this.state.taskType} onChange={this.handleInputChange}>
-              <option value="Cleaning">Cleaning</option>
-              <option value="preserveSpace1">preserve1</option>
-              <option value="preserveSpace2">preserve2</option>
-              <option value="preserveSpace3">preserve3</option>
+            <select className={styles.taskType} name="taskType" value={this.state.taskType} onChange={this.handleInputChange}>
+              <option value="Personal">Personal</option>
+              <option value="Remotely">Remotely</option>
             </select>
-            <textarea className="taskDescription" name="taskDescription" value={this.state.taskDescription} onChange={this.handleInputChange} />
+            <textarea className={styles.taskDescription} name="taskDescription" value={this.state.taskDescription} onChange={this.handleInputChange} />
           </label>
           {/* <input className="reset" type="reset" onClick={this.handleResetClick} value="Reset" /> */}
-          <input className="taskSubmit" type="submit" value="Post My Task" />
+          <input className={styles.taskSubmit} type="submit" value="Post My Task" />
         </form>
       </div>
     )

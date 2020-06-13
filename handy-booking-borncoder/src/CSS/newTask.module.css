@@ -1,0 +1,14 @@
+.buttonWrapper {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.postATask {
+  border: 1px solid #E0446D;
+  background-color: #E0446D;
+  border-radius: 10px;
+  color: white;
+  line-height: 20px;
+  width: 100px;
+}

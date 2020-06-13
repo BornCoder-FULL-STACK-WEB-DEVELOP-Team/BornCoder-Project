@@ -1,6 +1,6 @@
 import React from 'react';
 import RateTest from './RateTest';
-import '../CSS/ReviewTask.css';
+import styles from'../CSS/ReviewTask.module.css';
 
 class ReviewTask extends React.Component {
   constructor(props) {
@@ -37,15 +37,15 @@ class ReviewTask extends React.Component {
 
   render() {
     return(
-      <div className="container">
-        <div className="cardName">Review Task</div>
-          <div className="reviewBlock">
-            <span className="reviewTitle">Rate the tasker : </span>
-            <span className="reviewEntity"><RateTest /></span>
+      <div className={styles.container}>
+        <div className={styles.cardName}>Review Task</div>
+          <div className={styles.reviewBlock}>
+            <span className={styles.reviewTitle}>Rate the tasker : </span>
+            <span className={styles.reviewEntity}><RateTest /></span>
           </div>
-          <textarea className="reviewDescription" name="ReviewDescription" value={this.state.ReviewDescription} onChange={this.handleInputChange} />
+          <textarea className={styles.reviewDescription} name="ReviewDescription" value={this.state.ReviewDescription} onChange={this.handleInputChange} />
           {/* <input className="reset" type="reset" onClick={this.handleResetClick} value="Reset" /> */}
-          <input className="reviewSubmit" type="submit" value="Give Review" />
+          <input className={styles.reviewSubmit} type="submit" value="Give Review" />
       </div>
     )
   }
