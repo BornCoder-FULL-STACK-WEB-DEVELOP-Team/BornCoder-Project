@@ -48,3 +48,9 @@
   width: 100%;
   margin-top: 20px;
 }
+
+#modal {
+  position: fixed;
+  width: 30%;
+  height: fit-content;
+}

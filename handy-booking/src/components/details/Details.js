@@ -1,7 +1,6 @@
 import React from "react";
 import { GrLocation } from "react-icons/gr";
 import { RiCalendarCheckLine } from "react-icons/ri";
-import Modal from "react-modal";
 import "./Details.css";
 
 class Details extends React.Component {

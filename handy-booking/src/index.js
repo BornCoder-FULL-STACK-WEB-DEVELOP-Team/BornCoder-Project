@@ -9,23 +9,21 @@ import Message from "./components/message/Message";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div className="content-layout">
-      <div className="details-layout">
-        <Details />
-        <Price />
-      </div>
-      <div className="descrip-layout">
-        <Descrip />
-      </div>
-      <div className="offers-layout">
-        <Offers />
-      </div>
-      <div className="offers-layout">
-        <Message />
-      </div>
+  <div className="content-layout">
+    <div className="details-layout">
+      <Details />
+      <Price />
     </div>
-  </React.StrictMode>,
+    <div className="descrip-layout">
+      <Descrip />
+    </div>
+    <div className="offers-layout">
+      <Offers />
+    </div>
+    <div className="offers-layout">
+      <Message />
+    </div>
+  </div>,
   document.getElementById("root")
 );
 
