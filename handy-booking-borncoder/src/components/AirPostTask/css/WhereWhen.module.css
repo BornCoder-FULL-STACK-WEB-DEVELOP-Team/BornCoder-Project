@@ -47,47 +47,122 @@
   width: 66%;
 }
 
+
 .questionTitle {
   font-size: 19px;
   padding-left: 15px;
   font-weight: 400;
+  margin-top: 2px;
 }
 
-.questionTips {
-  font-size: 12px;
-  padding-left: 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.answerOne__wrapper {
-  padding-left: 15px;
-}
-
-.taskTitleInput {
-  height: 30px;
-  width: 460px
-}
-
-.answerTwo__wrapper {
-  padding-left: 15px;
-}
-
-.taskDetailInput {
+.optionWrapper {
+  /* border: 1px solid pink; */
   height: 140px;
-  width: 460px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+
+.labelRadio {
+  display: inline;
+  margin-top: 10px;
+  zoom: 140%;
+  /* border-color: rgb(125, 179, 67);
+  background-color: rgb(125, 179, 67); */
+}
+
+.inPersonOp {
+  /* border: 1px solid green; */
+  background-color: rgb(241, 247, 250);
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+}
+
+.labelTitle {
+  font-size: 15px;
+  display: inline;
+}
+
+.labelDescription {
+  font-size: 15px;
+  margin-left: 5px;
+  margin-top: 2px;
+}
+
+.icon {
+  margin-top: 3px;
+  margin-left: 5px;
+}
+
+.onlineOp {
+  /* border: 1px solid yellow; */
+  background-color: rgb(241, 247, 250);
+  margin: 0 10px 0 10px;
+  border-radius: 5px;
+}
+
+.suburbSelect {
+  margin-left: 15px;
+}
+
+.suburbInput {
+  height: 30px;
+  border: 2px solid lightgray;
+  border-radius: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.suburbInput:hover {
+  border: 2px solid rgb(82, 174, 219);
+}
+
+.selectDateWrapper {
+  margin-left: 15px;
+  margin-top: 0;
+}
+
+.selectDate {
+  height: 30px;
+  width: 300px;
+  border: 2px solid lightgray;
+  border-radius: 2px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: none;
+  overflow: hidden;
 }
 
 .partOneButton {
   text-align: center;
-  
+}
+
+.buttonWrapper {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.backButton {
+  margin-left: 15px;
+  background-color: rgb(229, 231, 226);
+  color: rgb(0, 143, 180);
+  border: 3px solid rgb(218, 225, 231);
+  border-radius: 30px;
+  width: 220px;
+  height: 50px;
 }
 
 .nextButton {
+  margin-left: 15px;
   background-color: rgb(125, 179, 67);
   color: white;
   border: 0 solid rgb(125, 179, 67);
   border-radius: 30px;
-  width: 300px;
+  width: 220px;
   height: 50px;
 }
