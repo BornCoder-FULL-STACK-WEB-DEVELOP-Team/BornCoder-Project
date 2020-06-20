@@ -1,0 +1,254 @@
+.container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  .taskDetail {
+    overflow: hidden;
+    background-color: #fff;
+
+    .taskHeader {
+      margin: 10px 20px;
+      display: flex;
+      flex-direction: row;
+
+      .detailPanel {
+        margin-top: 20px;
+        width: 390px;
+
+        .stepBarHolder {
+            margin-bottom: 20px;
+            height: 20px;
+
+            .stepBarActive {
+              text-transform: uppercase;
+              white-space: nowrap;
+              background-color: rgb(229, 240, 217);
+              border-radius: 10px;
+              padding: 2px 12px;
+            }
+
+            .stepBarDisabled {
+              text-transform: uppercase;
+              white-space: nowrap;
+              padding: 2px 12px;
+            }
+
+            .stepBar__text {
+              font-size: 12px;
+              line-height: 16px;
+              letter-spacing: 0.25px;
+              text-align: center;
+              vertical-align: initial;
+              font-style: initial;
+              white-space: initial;
+              text-decoration: initial;
+              margin: 0;
+              padding: 0;
+            }
+
+            .stepBar__textActive {
+              color: rgb(125, 179, 67);
+              
+            }
+
+            .stepBar__textDisabled {
+              color: rgb(187, 194, 220);
+            }
+        }
+
+        .taskTitle {
+          height: auto;
+          font-weight: 500;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          color: #292b32;
+        }
+
+        .postedDetailHolder {
+          margin-top: 20px;
+          
+          .detailHolder__icon {
+            margin: 4px 25px 8px 8px;
+          }
+
+          .detailHolder__smallTitle {
+            font-weight: 700;
+            font-size: 12;
+            text-transform: uppercase;
+            margin: 0;
+          }
+
+          .detailHolder__text {
+            color: #292b32;
+            margin: 0;
+          }
+          
+          .postedDetailPerson {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .avatar {
+              display: flex;
+              margin-right: 15px;
+        
+              .avatarImg {
+                border-radius: 50%;
+                width: 32px;
+                height: 32px;
+              }
+            }
+
+            .personNameWrapper {
+              margin-top: 13px;
+              margin-bottom: 15px;
+              flex-grow: 1;
+            }
+
+            .smallTime {
+              display: flex;
+              margin-top: 15px;
+              margin-right: 5px;
+              font-size: 12px;
+            }
+          }
+
+          .postedDetailLocation {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 15px;
+            padding-bottom: 15px;
+
+            .locationInformation {
+              width: calc(100% - 50px);
+            }
+          }
+
+          .postedDetailDate {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-top: 14px;
+            padding-bottom: 15px;
+          }
+        }
+      }
+
+      .detailSidebar {
+        border-radius: 4px;
+        width: 202px;
+        margin: 10px 0 10px 10px;
+        background-color: #fff;
+        text-align: center;
+
+        .paymentPanel__wrapper {
+          border: 1px solid rgb(187, 194, 220);
+          border-radius: 8px;
+
+          .paymentPanel__title {
+            line-height: 26px;
+            color: rgb(84, 90, 119);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px;
+            border-bottom: 1px solid rgb(246, 248, 253); 
+          }
+
+          .paymentPanel__priceWrapper {
+            line-height: 1;
+            padding: 8px 0;
+            border-bottom: 1px solid rgb(246, 248, 253);
+            
+            .paymentPanel__price {
+              color: rgb(41, 43, 50);
+              font-weight: 500;
+              padding: 4px 0;
+
+              & span {
+                font-size: 30px;
+              }
+            }
+          }
+
+          .paymentPanel__btnWrapper {
+            padding: 8px;
+
+            .paymentPanel__btn {
+              text-align: center;
+              white-space: nowrap;
+              cursor: pointer;
+              box-sizing: border-box;
+              color: rgb(255, 255, 255);
+              font-size: 16px;
+              line-height: 24px;
+              font-weight: 700;
+              letter-spacing: 0.15px;
+              width: 100%;
+              background-color: rgb(125, 179, 67);
+              border-radius: 160px;
+              margin: 0;
+              border: 2px solid rgba(0, 0, 0, 0);
+              padding: 8px 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .section__title {
+      padding: 20px 16px 0;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      text-transform: uppercase;
+      height: 22px;
+    }
+
+    .taskDescription {
+      width: 100%;
+      margin-top: 15px;
+
+      .description__content {
+        margin: 0 20px;
+        padding-bottom: 15px;
+      }
+    }
+
+    .offersSection {
+      .offersSectionContent {
+        margin: 0 20px;
+        padding-bottom: 15px;
+
+        .offersImg {
+          text-align: center;
+          margin: 8px 0;
+        }
+
+        .offersSection__btn {
+          display: block;
+          text-align: center;
+          border-radius: 200px;
+          white-space: nowrap;
+          cursor: pointer;
+          border: 2px solid rgba(41, 43, 50, .1);
+          box-sizing: border-box;
+          margin-left: auto;
+          margin-right: auto;
+          color: #fff;
+          font-weight: 500;
+          font-size: 14px;
+          letter-spacing: .25px;
+          line-height: 20px;
+          padding: 6px 16px;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+          background-color: #7db343;
+        }
+      }
+    }
+  }
+}
