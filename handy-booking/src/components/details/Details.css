@@ -6,8 +6,6 @@
 .task-header {
   display: flex;
   flex-direction: row;
-  margin-top: 100px;
-  margin-left: 150px;
 }
 
 .step-bar {
@@ -23,6 +21,15 @@
 
 .button-active {
   background-color: lightblue;
+  border-radius: 20%;
+}
+
+.assigned-active {
+  background-color: lightgreen;
+  border-radius: 20%;
+}
+.completed-active {
+  background-color: lightsalmon;
   border-radius: 20%;
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Price.css";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -7,10 +7,14 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import { width } from "@material-ui/system";
+import axios from "axios";
 
 function Price() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [offer, setOffer] = useState();
+  const [send, setSend] = useState();
+  const [task, setTask] = useState([]);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -20,11 +24,64 @@ function Price() {
     setOpen(false);
   };
 
+  const handleSuccessOpen = () => {
+    setSuccess(true);
+    setOpen(false);
+  };
+
+  const handleSuccessClose = () => {
+    setSuccess(false);
+  };
+
+  const sendOffer = {
+    description: offer,
+  };
+
+  const headers = {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4IiwiaWF0IjoxNTkxNDM4NzAyLCJpc3MiOiJkZGQiLCJleHAiOjE1OTE0NDIzMDJ9.7fo_d0la88YpndLNjJlTcRXkl9eV0t50HXSHE6NoHpw",
+  };
+
+  const handleSendOffer = () => {
+    setOpen(false);
+    setSend(offer);
+    console.log(send);
+
+    axios
+      .post(
+        `http://localhost:8090/replies`,
+
+        sendOffer,
+
+        { headers: headers }
+      )
+      .then((res) => {
+        console.log("send reply succssful");
+      });
+
+    setOffer("");
+  };
+  //fetch data -- task price
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8090/tasks/1`)
+      .then((res) => {
+        // console.log(res);
+        setTask(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <div className="price-card">
       <div className="price-padding">
         <div className="budget-header">task budget</div>
-        <div className="task-price">$100</div>
+        <div className="task-price">${task.price}</div>
         <button className="offer-button" onClick={handleClickOpen}>
           Make an offer
         </button>
@@ -39,7 +96,7 @@ function Price() {
           <DialogTitle id="form-dialog-title">Make An Offer</DialogTitle>
           <DialogContent>
             <DialogContentText>You may earn</DialogContentText>
-            <DialogTitle>$100</DialogTitle>
+            <DialogTitle>${task.price}</DialogTitle>
             <DialogContentText>
               Why are you the best person for this task?
             </DialogContentText>
@@ -49,14 +106,39 @@ function Price() {
               rows={4}
               variant="outlined"
               style={{ width: "100%" }}
+              value={offer}
+              onChange={(event) => {
+                const { value } = event.target;
+                setOffer(value);
+                console.log(offer);
+              }}
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose} color="primary">
+            <Button
+              onClick={handleClose}
+              color="primary"
+              onClick={handleSuccessOpen}
+            >
               Cancel
             </Button>
-            <Button onClick={handleClose} color="primary">
+            <Button onClick={handleSendOffer} color="primary">
               Send Offer
+            </Button>
+          </DialogActions>
+        </Dialog>
+      </div>
+
+      <div>
+        <Dialog
+          open={success}
+          onClose={handleSuccessClose}
+          aria-labelledby="form-dialog-title"
+        >
+          <DialogTitle>Succssful</DialogTitle>
+          <DialogActions>
+            <Button onClick={handleSuccessClose} color="primary">
+              OK
             </Button>
           </DialogActions>
         </Dialog>

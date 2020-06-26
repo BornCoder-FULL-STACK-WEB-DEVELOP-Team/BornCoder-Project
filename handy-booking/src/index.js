@@ -6,22 +6,33 @@ import Price from "./components/price/Price";
 import Descrip from "./components/descrip/Descrip";
 import Offers from "./components/offers/Offers";
 import Message from "./components/message/Message";
+import Image from "./components/image/Image";
+import TaskCard from "./components/task-card/TaskCard";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <div className="content-layout">
-    <div className="details-layout">
-      <Details />
-      <Price />
+    <div className="content-left">
+      <TaskCard />
     </div>
-    <div className="descrip-layout">
-      <Descrip />
-    </div>
-    <div className="offers-layout">
-      <Offers />
-    </div>
-    <div className="offers-layout">
-      <Message />
+
+    <div className="content-right">
+      <div className="wrap-right">
+        <div className="details-layout">
+          <Details />
+          <Price />
+        </div>
+        <div className="descrip-layout">
+          <Descrip />
+        </div>
+        <div className="offers-layout">
+          <Offers />
+        </div>
+        <div className="offers-layout">
+          <Message />
+          <Image />
+        </div>
+      </div>
     </div>
   </div>,
   document.getElementById("root")

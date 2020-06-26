@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #545a77;
+  background-color: #f6f8fd;
 }
 
 code {
@@ -20,15 +21,39 @@ code {
 
 .content-layout {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .descrip-layout {
-  margin-left: 150px;
 }
 
 .offers-layout {
-  margin-left: 150px;
   margin-top: 50px;
+}
+
+.content-right {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #fff;
+}
+
+.content-left {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.wrap-right {
+  margin: 20px 20px;
 }
