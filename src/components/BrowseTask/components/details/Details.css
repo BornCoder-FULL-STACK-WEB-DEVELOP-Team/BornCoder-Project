@@ -1,0 +1,65 @@
+.body {
+  font-family: museo_sans, Helvetica Neue, Helvetica, Arial, Lucida Grande,
+    sans-serif;
+}
+
+.task-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.step-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+.step-button {
+  text-transform: uppercase;
+  padding: 2px 12px;
+  font-size: 16px;
+}
+
+.button-active {
+  background-color: lightblue;
+  border-radius: 20%;
+}
+
+.assigned-active {
+  background-color: lightgreen;
+  border-radius: 20%;
+}
+.completed-active {
+  background-color: lightsalmon;
+  border-radius: 20%;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#postman-image {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.posted-detail {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+.small-title {
+  font-size: 13px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.user-name {
+  cursor: pointer;
+  color: #008fb4;
+}

@@ -1,0 +1,19 @@
+.message-title {
+  font-weight: bold;
+  color: rgb(84, 90, 119);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 16px;
+}
+
+#message {
+  height: 120px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}

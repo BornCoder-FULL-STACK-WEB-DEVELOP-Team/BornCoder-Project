@@ -1,0 +1,12 @@
+.details-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  height: 22px;
+}
+
+.details-descriptions {
+  max-width: 650px;
+  font-weight: 400;
+}
