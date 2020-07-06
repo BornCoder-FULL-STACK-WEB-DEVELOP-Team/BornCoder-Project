@@ -10,14 +10,14 @@ function HowMuch(props) {
     setOpen(false);
   };
 
-  const handlePost = (e) => {
-    e.preventDefault();
-    props.handlePost();
-  };
-
   const handlePrevious = (e) => {
     e.preventDefault();
     props.preStep();
+  };
+
+  const handlePost = (e) => {
+    e.preventDefault();
+    props.handlePost();
   };
 
   return (

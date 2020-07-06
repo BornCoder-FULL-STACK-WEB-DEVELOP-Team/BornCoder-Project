@@ -16,6 +16,7 @@ import PostButton from "./components/PostButton/PostButton";
 import BecomeTasker from "./components/BecomeTasker/BecomeTasker";
 import PostTask from "./components/PostTask/PostTask";
 import BrowseTask from "./components/BrowseTask/BrowseTask";
+import MyTask from "./components/MyTask/MyTask";
 
 const App = () => {
   const [showModeratorBoard, setShowModeratorBoard] = useState(false);
@@ -102,8 +103,8 @@ const App = () => {
           ) : (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/categories"} className="nav-link">
-                  Categories
+                <Link to={"/mytask"} className="nav-link">
+                  My Task
                 </Link>
               </li>
               <li className="nav-item">
@@ -137,6 +138,7 @@ const App = () => {
             <Route path="/post-task" component={PostTask} />
             <Route path="/browse-task" component={BrowseTask} />
             <Route path="/become-tasker" component={BecomeTasker} />
+            {/* <Route path="/mytask" component={MyTask} /> */}
           </Switch>
         </div>
       </div>
