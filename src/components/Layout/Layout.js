@@ -9,6 +9,7 @@ import Button from '../Button';
 import Afterpay from './components/Afterpay';
 import OthersDone from './components/OthersDone';
 import HowWork from './components/HowWork';
+import MeetTasker from './components/MeetTasker';
 
 const Wrapper = styled.div`
   display: block;
@@ -40,6 +41,8 @@ const Layout = ({ children, fontSize }) => {
         </Flex>
 
         <HowWork />
+        <Afterpay />
+        <MeetTasker></MeetTasker>
         {children}
         <Footer />
       </Content>

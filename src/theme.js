@@ -5,7 +5,8 @@ const color = {
   pink: '#e0446d',
 
   grey: '#535a77',
-  lightGrey: '#676f74',
+  lightGrey: '#b0bfc3',
+
   black: '#2a2b32',
   white: '#ffffff',
   red: '#e75245',
@@ -26,7 +27,7 @@ export default {
   border: {
     default: `1px solid ${color.border}`,
     button: '2px solid rgba(41, 43, 50, 0.1);',
-    navLink: `2px solid ${color.blue}`,
+    navLink: `3px solid ${color.blue}`,
     transparent: `2px solid transparent`,
   },
 
