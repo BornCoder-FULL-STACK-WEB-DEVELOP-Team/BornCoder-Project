@@ -1,0 +1,51 @@
+@import './variables.scss';
+
+.background_container{
+    //background-color: $test-color;
+    //background-image: url("https://airtasker-page-assets.s3.amazonaws.com/runner/images/header-2.png");
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% auto;
+    position: relative;
+    height: 50vh;
+}
+
+.image_div{
+    height: 40vh;
+    width: 100%;
+}
+
+.back_img{
+    width: 100%;
+    height: 100%;
+}
+
+.info_update{
+    height: 20vh;
+    //background-color: red;
+}
+.background_container .avatar{
+    position:absolute;
+    left:2vw;
+    bottom:7vh;
+}
+
+.background_container .cloud_upload{
+    position:absolute;
+    left:3vw;
+    bottom:9vh;
+}
+
+.background_container .updatebutton{
+    position:absolute;
+    right:-3vw;
+    top:8vh; 
+}
+
+
+.background_container .upload_button{
+    position:absolute;
+    left:10vw;
+    bottom:9vh;
+}

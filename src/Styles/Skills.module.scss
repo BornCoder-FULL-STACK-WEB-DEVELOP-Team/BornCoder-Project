@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+.skills{
+    height: 15vh;
+    position: relative;
+}
+
+.skills .updatebutton{
+    position:absolute;
+    right:-3vw;
+    top:3vh; 
+}
