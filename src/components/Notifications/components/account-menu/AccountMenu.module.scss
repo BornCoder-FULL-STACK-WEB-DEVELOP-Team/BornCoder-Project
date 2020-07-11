@@ -1,0 +1,44 @@
+.menuHeader {
+  padding-top: 30px;
+  padding-bottom: 10px;
+
+  .avatarContainer {
+    width: 100%;
+    
+    .avatarImg {
+      border: 1px solid #bbc2dc;
+      width: 128px;
+      height: 128px;
+      margin-left: 38px;
+      border-radius: 50%;
+    }
+  }
+  
+  .userName {
+    line-height: 30px;
+    margin-top: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+  }
+}
+
+.menuContainer {
+  display: block;
+  .menuBtn {
+    display: block;
+    cursor: pointer;
+    text-decoration: none;
+    color: #545a77;
+    font-weight: 500;
+    line-height: 44px;
+    border-bottom: 1px solid #f6f8fd;
+    padding-left: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    &:hover {
+      background-color: rgba(224, 224, 224, 0.3);
+    }
+  }
+}

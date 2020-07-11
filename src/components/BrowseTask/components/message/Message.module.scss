@@ -1,0 +1,36 @@
+.messageTitle {
+  font-weight: bold;
+  color: rgb(84, 90, 119);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 16px;
+}
+
+.messageContent {
+  height: 120px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.sendBtn {
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0.15px;
+  background-color: #008fb4;
+  border-radius: 160px;
+  margin: 0;
+  border: 2px solid rgba(0, 0, 0, 0);
+  padding: 8px 16px;
+}

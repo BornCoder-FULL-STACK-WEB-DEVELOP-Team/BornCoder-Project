@@ -1,0 +1,18 @@
+.okStyle {
+  background-color: white;
+  color: #4caf50;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none !important;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 20px;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.iconStyle {
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
