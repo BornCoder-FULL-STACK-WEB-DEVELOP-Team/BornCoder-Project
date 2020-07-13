@@ -1,0 +1,116 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .ul {
+    margin-top: 0px;
+    padding-top: 0px;
+  }
+
+  .list {
+    list-style-type: none;
+    margin-left: 0;
+    margin: 10px;
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0 1px rgba(187, 194, 220, 0.6);
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+
+    &:before {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      content: "";
+      display: block;
+      position: absolute;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      border-left: 3px solid #7db343;
+    }
+  }
+
+  .item {
+    text-decoration: none;
+    box-shadow: 0 1px rgba(187, 194, 220, 0.6);
+    opacity: 0;
+    padding: 0 12px;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 4px;
+    margin: 10px 7px 10px 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: relative;
+
+    .header {
+      display: flex;
+      margin: 10px 0 5px 0;
+
+      .title {
+        font-weight: 500;
+        flex-grow: 1;
+        font-size: 17px;
+        line-height: 20px;
+        color: #292b32;
+        word-break: break-word;
+      }
+
+      .price {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 24px;
+        margin-left: 10px;
+        color: #292b32;
+      }
+    }
+
+    .body {
+      margin: 10px 0 5px 0;
+      min-height: 34px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .bodyLeft {
+        flex-grow: 1;
+
+        .locationDateText {
+          font-weight: 500;
+          font-size: 12px;
+          color: #545a77;
+        }
+      }
+
+      .avatar {
+        display: flex;
+
+        .avatarImg {
+          border-radius: 50%;
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+    .footer {
+      height: 32px;
+      font-size: 11px;
+      line-height: 32px;
+      box-sizing: border-box;
+      border-top: 1px solid #e7ebfb;
+
+      .status {
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #7db343;
+      }
+    }
+  }
+}
