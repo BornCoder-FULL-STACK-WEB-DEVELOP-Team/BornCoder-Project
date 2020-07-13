@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "./browse.css";
 import Details from "./components/details/Details";
 import Price from "./components/price/Price";
@@ -17,16 +16,26 @@ class BrowseTask extends React.Component {
       task: [],
       taskId: 1,
       newId: 1,
+      firstBrowse: true,
     };
   }
 
   changeTaskId = (item) => {
     console.log(item);
-    this.setState({ taskId: item });
+    this.setState({
+      taskId: item,
+    });
     console.log("taskID :  " + this.state.taskId);
   };
 
   componentDidMount() {
+    const paramValue = this.props.match.params.id;
+    if (paramValue) {
+      this.setState({
+        taskId: parseInt(paramValue),
+      });
+    }
+
     axios
       .get(`http://localhost:8090/tasks/` + this.state.taskId)
       .then((res) => {
@@ -54,7 +63,7 @@ class BrowseTask extends React.Component {
     return (
       <div className="content-layout">
         <div className="content-left">
-          <TaskCard getTaskId={this.changeTaskId} />
+          <TaskCard />
         </div>
 
         <div className="content-right">
@@ -71,7 +80,7 @@ class BrowseTask extends React.Component {
             </div>
 
             <div className="offers-layout">
-              <Message />
+              <Message taskId={this.state.taskId} />
             </div>
           </div>
         </div>

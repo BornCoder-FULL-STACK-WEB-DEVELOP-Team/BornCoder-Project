@@ -2,10 +2,13 @@ import React from "react";
 import { GrLocation } from "react-icons/gr";
 import { RiCalendarCheckLine } from "react-icons/ri";
 import "./Details.css";
+import axios from "axios";
 
 class Details extends React.Component {
   constructor() {
     super();
+
+    //this.buttonStyle = "step-button";
 
     this.state = {
       assignedStyle: "step-button",

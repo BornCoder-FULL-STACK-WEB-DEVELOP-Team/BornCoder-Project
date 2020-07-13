@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-
+import styled, { ThemeProvider } from 'styled-components';
 import UserService from '../services/user.service';
-import SearchBar from '../components/SearchBar/SearchBar';
-import TaskList from '../components/TaskList/TaskList';
+import theme from '../theme';
+import Layout from '../components/Layout';
 
 const Home = () => {
   const [content, setContent] = useState('');
@@ -24,14 +24,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <SearchBar />
-      <h2 style={{ margin: '60px 30px 0 240px' }}>What do you need done?</h2>
-      <TaskList></TaskList>
-      <div style={{ margin: '60px' }}></div>
-      {/* <TaskCard />
-      <Footer /> */}
-    </div>
+    <ThemeProvider theme={theme}>
+      <Layout></Layout>
+    </ThemeProvider>
   );
 };
 

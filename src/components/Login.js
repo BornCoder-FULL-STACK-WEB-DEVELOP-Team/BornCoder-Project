@@ -1,10 +1,10 @@
-import React, { useState, useRef } from "react";
-import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
-import CheckButton from "react-validation/build/button";
-import "./Signinup.css";
+import React, { useState, useRef } from 'react';
+import Form from 'react-validation/build/form';
+import Input from 'react-validation/build/input';
+import CheckButton from 'react-validation/build/button';
+import styles from './Signinup.module.css';
 
-import AuthService from "../services/auth.service";
+import AuthService from '../services/auth.service';
 
 const required = (value) => {
   if (!value) {
@@ -20,10 +20,10 @@ const Login = (props) => {
   const form = useRef();
   const checkBtn = useRef();
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const onChangeUsername = (e) => {
     const username = e.target.value;
@@ -38,7 +38,7 @@ const Login = (props) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    setMessage("");
+    setMessage('');
     setLoading(true);
 
     form.current.validateAll();
@@ -46,7 +46,7 @@ const Login = (props) => {
     if (checkBtn.current.context._errors.length === 0) {
       AuthService.login(username, password).then(
         () => {
-          props.history.push("/profile");
+          props.history.push('/profile');
           window.location.reload();
         },
         (error) => {
@@ -67,20 +67,19 @@ const Login = (props) => {
   };
 
   return (
-    <div className="col-md-12" style={{ paddingTop: "10px" }}>
-      <div className="card card-container">
+    <div className={styles.cardContainer}>
+      <div className={styles.card}>
         <img
           src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
           alt="profile-img"
-          className="profile-img-card"
+          className={styles.profileImgCard}
         />
 
         <Form onSubmit={handleLogin} ref={form}>
-          <div className="form-group">
+          <div>
             <label htmlFor="username">Username</label>
             <Input
               type="text"
-              className="form-control"
               name="username"
               value={username}
               onChange={onChangeUsername}
@@ -88,11 +87,10 @@ const Login = (props) => {
             />
           </div>
 
-          <div className="form-group">
+          <div>
             <label htmlFor="password">Password</label>
             <Input
               type="password"
-              className="form-control"
               name="password"
               value={password}
               onChange={onChangePassword}
@@ -100,23 +98,19 @@ const Login = (props) => {
             />
           </div>
 
-          <div className="form-group">
-            <button className="btn btn-block" disabled={loading}>
-              {loading && (
-                <span className="spinner-border spinner-border-sm"></span>
-              )}
+          <div>
+            <button disabled={loading}>
+              {loading && <span>...</span>}
               <span>Login</span>
             </button>
           </div>
 
           {message && (
-            <div className="form-group">
-              <div className="alert alert-danger" role="alert">
-                {message}
-              </div>
+            <div>
+              <div role="alert">{message}</div>
             </div>
           )}
-          <CheckButton style={{ display: "none" }} ref={checkBtn} />
+          <CheckButton style={{ display: 'none' }} ref={checkBtn} />
         </Form>
       </div>
     </div>

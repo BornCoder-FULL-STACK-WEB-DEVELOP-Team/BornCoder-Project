@@ -44,7 +44,6 @@ function Price(props) {
     e.preventDefault();
     setOpen(false);
     setSend(offer);
-    //console.log(send);
 
     axios
       .post(
@@ -62,26 +61,12 @@ function Price(props) {
     setSuccess(true);
     setOpen(false);
   };
-  //fetch data -- task price
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8090/tasks/` + props.taskId)
-      .then((res) => {
-        // console.log(res);
-        setTask(res.data);
-        //console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [props]);
 
   return (
     <div className="price-card">
       <div className="price-padding">
         <div className="budget-header">task budget</div>
-        <div className="task-price">${task.price}</div>
+        <div className="task-price">${props.task.price}</div>
         <button className="offer-button" onClick={handleClickOpen}>
           Make an offer
         </button>

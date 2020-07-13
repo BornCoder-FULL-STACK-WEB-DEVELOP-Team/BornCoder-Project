@@ -23,6 +23,7 @@ function Offers(props) {
   };
 
   useEffect(() => {
+  
     axios
       .get(`http://localhost:8090/replies/` + props.taskId)
       .then((res) => {

@@ -7,19 +7,17 @@ class TaskCard extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: [],
+      tasks: [],
       id: null,
     };
   }
 
   componentDidMount() {
     axios.get(`http://localhost:8090/tasks`).then((tas) => {
-      const task = tas.data;
-      this.setState({ task });
-      //console.log(task);
-      //console.log("id:  " + this.state.id);
-      // const test = [{ name: "jingshuai", age: "13" }];
-      //console.log(task.title);
+      const tasks = tas.data;
+      this.setState({
+        tasks,
+      });
     });
   }
 
@@ -33,12 +31,9 @@ class TaskCard extends React.Component {
     return (
       <div className={styles.container}>
         <ul className={styles.ul}>
-          {this.state.task.map((task) => (
+          {this.state.tasks.map((task) => (
             <li key={task.taskId} className={styles.list}>
-              <a
-                className={styles.item}
-                onClick={() => this.props.getTaskId(task.taskId)}
-              >
+              <a href={`/browse-tasks/${task.taskId}`} className={styles.item}>
                 <div className={styles.header}>
                   <span className={styles.title}>{task.title}</span>
                   <div className={styles.price}>
