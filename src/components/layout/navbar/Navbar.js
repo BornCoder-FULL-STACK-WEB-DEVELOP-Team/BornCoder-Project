@@ -61,10 +61,21 @@ const Navbar = ({ title, icon }) => {
     logout();
   };
 
+  const onLoadUser = () => {
+    loadUser();
+  };
+
   const authLinks = (
     <Fragment>
       <h3>
         Hello {user && user.userName}
+        <Link onClick={onLoadUser} href="/my-task">
+          My tasks
+        </Link>
+        <Link onClick={onLoadUser} href="/profile">
+          My Profile
+        </Link>
+        <Link href="/notification">Notification</Link>
         <Link onClick={onLogout} href="/">
           <i className="fas fa-sign-out-alt">Logout</i>
         </Link>

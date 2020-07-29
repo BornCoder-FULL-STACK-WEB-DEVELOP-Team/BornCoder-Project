@@ -1,8 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 
-import AuthContext from '../../context/auth/authContext';
+import AuthContext from '../../../context/auth/authContext';
 
-const Profile = () => {
+const Notification = () => {
   const authContext = useContext(AuthContext);
 
   const { loadUser, user } = authContext;
@@ -22,4 +22,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Notification;

@@ -6,6 +6,8 @@ import Navbar from './components/layout/navbar/Navbar';
 import Alert from './components/layout/Alert';
 import Profile from './components/pages/Profile';
 import Home from './components/pages/Home';
+import MyTask from './components/pages/MyTask';
+import Notification from './components/pages/Notification';
 
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
@@ -30,7 +32,13 @@ const App = () => {
             <div className="container">
               <Alert></Alert>
               <Switch>
-                <PrivateRoute path="/profile" exact component={Profile} />
+                <PrivateRoute exact path="/profile" component={Profile} />
+                <PrivateRoute exact path="/my-task" component={MyTask} />
+                <PrivateRoute
+                  path="/notification"
+                  exact
+                  component={Notification}
+                />
                 <Route path="/" exact component={Home} />
                 <Route path="/register" exact component={Register} />
                 <Route path="/login" exact component={Login} />

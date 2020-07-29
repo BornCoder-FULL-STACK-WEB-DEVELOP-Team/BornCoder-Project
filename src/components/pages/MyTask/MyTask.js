@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 
-import AuthContext from '../../context/auth/authContext';
+import AuthContext from '../../../context/auth/authContext';
 
-const Profile = () => {
+const MyTask = (props) => {
   const authContext = useContext(AuthContext);
 
-  const { loadUser, user } = authContext;
+  const { loadUser, user, isAuthenticated } = authContext;
 
   const { userName, email, userId } = user;
 
@@ -15,11 +15,9 @@ const Profile = () => {
 
   return (
     <div style={{ marginTop: '60px' }}>
-      {userName}
-      {email}
-      {userId}
+      user id: {userId} user name: {userName}
     </div>
   );
 };
 
-export default Profile;
+export default MyTask;

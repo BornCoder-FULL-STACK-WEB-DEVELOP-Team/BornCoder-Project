@@ -13,7 +13,7 @@ const Login = (props) => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      props.history.push('/profile');
+      props.history.push('/my-task');
     }
 
     if (error === 'User not exist') {
