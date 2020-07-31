@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import { deepOrange,blueGrey} from '@material-ui/core/colors';
-import {image_div,back_img,upload_button,cloud_upload,info_update,background_container,avatar,updatebutton} from '../Styles/Background.module.scss';
+import {image_div,back_img,upload_button,upload_button_background,cloud_upload,cloud_upload_background,info_update,background_container,avatar,updatebutton} from '../Styles/Background.module.scss';
 import IconButton from '@material-ui/core/IconButton';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
@@ -111,8 +111,8 @@ class Background extends React.Component{
                 .then(response => response.json())
                 .then(data =>{
                 //console.log(data)
-                this.setState({users: data})  ////赋值到本地数据
-                console.log(this.state.users.userName)
+                this.setState({users: data});  ////赋值到本地数据
+                console.log(this.state.users.userName);
                 const { setValue } = this.props;
                 setValue(this.state.users);
                 }).catch(e => console.log('错误:', e))  
@@ -153,7 +153,7 @@ class Background extends React.Component{
     if (image === null) {
       console.error(`not an image, should be ${typeof image}`);
     }
-
+  else{
   const uploadTask = storage.ref(`/images/${image.name}`).put(image);
 
   uploadTask.on(
@@ -211,6 +211,81 @@ class Background extends React.Component{
         
     }
   );
+}
+};
+
+uploadFile_background = (event) => {
+  this.setState(prevState => ({
+    isToggleOn: !prevState.isToggleOn,
+    display: prevState.isToggleOn ? 'none': 'block'
+  }));  
+  event.preventDefault();
+  console.log(this.state);
+  const { image } = this.state;
+  //const uploadTask = storage.ref(`images/${image.name}`).put(image);
+  //uploadTask.on('state_changed', progress, error,complete)
+  if (image === null) {
+    console.error(`not an image, should be ${typeof image}`);
+  }
+else{
+const uploadTask = storage.ref(`/images/${image.name}`).put(image);
+
+uploadTask.on(
+  "state_changed",
+  (snapShot) => {
+    //takes a snap shot of the process as it is happening
+    //console.log(snapShot);
+  },
+  (err) => {
+    //catches the errors
+    console.log(err);
+  },
+  () => {
+    // gets the functions from storage refences the image storage in firebase by the children
+    // gets the download url then sets the image from firebase as the value for the imgUrl key:
+    storage
+      .ref("images")
+      .child(image.name)
+      .getDownloadURL()
+      .then((url) => {
+        console.log(url);
+        let content = {backgroundPhoto: url};
+      // The actual fetch request
+        
+      
+      fetch('http://localhost:8090/users/1', {
+        method: 'put',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(content)
+      }).then(response => {
+        if(response.ok) {
+            response.json().then(data => {
+                console.log(data);
+                fetch( 'http://localhost:8090/users/1')
+                  .then(response => response.json())
+                  .then(data =>{
+                  //console.log(data)
+                  this.setState({users: data})  ////赋值到本地数据
+                  console.log(this.state.users.backgroundPhoto)
+                  }).catch(e => console.log('错误:', e))  
+            });
+        } else {
+            console.log("请求不成功，状态码为", response.status);
+        }
+      }).catch(function(e) {
+        console.log("Oops, error");
+      });
+      });
+
+
+
+        
+      
+  }
+);
+}
 };
 
     
@@ -240,7 +315,17 @@ class Background extends React.Component{
       }} className={classes.update_button+" "+cloud_upload} style={{display: this.state.display}}>
       <CloudUploadIcon  />
       </IconButton>
-        <Button onClick={this.uploadFile} variant="contained" className={upload_button} style={{display: this.state.display}}>Upload</Button> 
+        <Button onClick={this.uploadFile} variant="contained" className={upload_button} style={{display: this.state.display}}>
+        Upload
+        </Button> 
+        <IconButton onClick={() => {
+          this.fileInputEl.current.click()		//当点击a标签的时候触发事件
+        }} className={classes.update_button+" "+cloud_upload_background} style={{display: this.state.display}}>
+        <CloudUploadIcon  />
+        </IconButton>
+          <Button onClick={this.uploadFile_background} variant="contained" className={upload_button_background} style={{display: this.state.display}}>
+          Upload
+          </Button> 
     </div>
     <div 
       className={info_update} 

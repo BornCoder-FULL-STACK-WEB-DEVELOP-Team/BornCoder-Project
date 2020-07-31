@@ -37,6 +37,12 @@
     bottom:9vh;
 }
 
+.background_container .cloud_upload_background{
+    position:absolute;
+    right:8vw;
+    top:0vh;
+}
+
 .background_container .updatebutton{
     position:absolute;
     right:-3vw;
@@ -48,4 +54,10 @@
     position:absolute;
     left:10vw;
     bottom:9vh;
+}
+
+.background_container .upload_button_background{
+    position:absolute;
+    right:0vw;
+    top:1vh;
 }

@@ -4,6 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {blueGrey} from '@material-ui/core/colors';
 import SimpleTabs from './SimpleTabs'
+import moment from 'moment';
+
 
 const useStyles = theme => ({
   root: {
@@ -53,7 +55,7 @@ class Basicinfo extends React.Component {
                        {/*{this.state.users.location} */} 
                     </div>
                     <div className="start_date">
-                    {this.props.value.joinDate}
+                    Joined from:{moment(this.props.value.joinDate).format('YYYY-MM-DD')}
                         {/*{this.state.users.joinDate} */}
                     </div>
                 </Grid>

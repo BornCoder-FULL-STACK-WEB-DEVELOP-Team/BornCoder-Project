@@ -4,7 +4,6 @@ import Background from './Components/Background';
 import BasicInfo from './Components/BasicInfo';
 import About from './Components/About';
 //import Reviews from './Reviews';
-import Portfolio from './Components/Portfolio';
 import Skills from './Components/Skills';
 import {content} from './Styles/App.module.scss';
 import SimpleTabs from './Components/SimpleTabs';
@@ -23,6 +22,7 @@ class Profile extends React.Component{
       value,
     })
   }
+  
 
   render(){
     return (   
@@ -30,9 +30,8 @@ class Profile extends React.Component{
       <Container maxWidth="md"  className={content}>
         <Background setValue={this.setValue}/>
         <BasicInfo value={this.state.value}/>
-        <About />
-        <Portfolio />
-        <Skills />
+        <About value={this.state.value}/>
+        <Skills value={this.state.value}/>
         <SimpleTabs  />
       </Container>
     </Fragment>

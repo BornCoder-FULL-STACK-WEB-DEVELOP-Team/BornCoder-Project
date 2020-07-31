@@ -70,8 +70,7 @@ export default function SimpleTabs() {
       <AppBar position="static">
         <Tabs className={classes.tabs} value={value} onChange={handleChange} aria-label="simple tabs example" 
         classes={{indicator: classes.indicator}} tabItemContainerStyle={{width: '5vw'}}>
-          <Tab classes={{ label: classes.label }} label="As a Tasker" {...a11yProps(0)} />
-          <Tab classes={{ label: classes.label }} label="As a Poster" {...a11yProps(1)} />
+          <Tab classes={{ label: classes.label }} label="Reviews" {...a11yProps(0)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -79,13 +78,6 @@ export default function SimpleTabs() {
             Looks like you haven’t received{"\n"}
             any reviews just yet.{"\n"}
             Let’s browse available tasks.{"\n"}
-        </pre>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <pre>
-            Looks like you haven’t received{"\n"}
-            any reviews just yet.{"\n"}
-            Let’s go post a task.{"\n"}
         </pre>
       </TabPanel>
     </div>
