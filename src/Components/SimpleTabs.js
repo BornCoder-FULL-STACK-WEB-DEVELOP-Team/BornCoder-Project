@@ -1,85 +1,89 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
-
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box p={2}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  indicator: {
-    backgroundColor: '#85b1bd',
-  },
-  label: {
-    color: 'black',
-  },
-  tabs:{
-    backgroundColor: '#b0bec5',
+import { AiFillStar } from "react-icons/ai";
+import Grid from '@material-ui/core/Grid';
+import axios from "axios";
+import {review_image,review_display,review_header,detail_box,star,review_name,review_text,review_score,list,ul} from '../Styles/SimpleTabs.module.scss';
+class SimpleTabs extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      review: [],
+      task:[],
+      user:[],
+    };
   }
-}));
 
-export default function SimpleTabs() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+  componentDidMount() {
+    axios.get(`http://localhost:8090/reviews`).then((res) => {
+      const review = res.data;
+      this.setState({ review });
+      console.log(review);
+      // const test = [{ name: "jingshuai", age: "13" }];
+      //console.log(task.title);
+      
+    });
+    axios.get(`http://localhost:8090/reviews`).then((res) => {
+      const task = res.data;
+      this.setState({ task });
+      console.log(task);
+      // const test = [{ name: "jingshuai", age: "13" }];
+      //console.log(task.title);
+      
+    });
+    axios.get(`http://localhost:8090/users`).then((res) => {
+      const user = res.data;
+      this.setState({ user });
+      console.log(user);
+      // const test = [{ name: "jingshuai", age: "13" }];
+      //console.log(task.title);
+      
+    });
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  
-
+  }
+  render(){
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Tabs className={classes.tabs} value={value} onChange={handleChange} aria-label="simple tabs example" 
-        classes={{indicator: classes.indicator}} tabItemContainerStyle={{width: '5vw'}}>
-          <Tab classes={{ label: classes.label }} label="Reviews" {...a11yProps(0)} />
-        </Tabs>
-      </AppBar>
-      <TabPanel value={value} index={0}>
-        <pre>
-            Looks like you haven’t received{"\n"}
-            any reviews just yet.{"\n"}
-            Let’s browse available tasks.{"\n"}
-        </pre>
-      </TabPanel>
+    <div className="reviews">
+      <div className="title">
+      REVIEWS
+      </div>
+      <div className={review_display}>
+      <ul className={ul}>
+        {this.state.review.map((review) => (
+          <li key={review.replyId} className={list}>
+            <div className={review_header}>
+              <img
+                src="https://image.shutterstock.com/image-photo/portrait-surprised-cat-scottish-straight-600w-499196506.jpg"
+                alt="image"
+                id={review_image}
+              />
+              <div className={detail_box}>
+                <a className={review_name}>alex</a>
+                <div className={star}>
+                  <AiFillStar color="rgb(233,165,45)" />
+                  <AiFillStar color="rgb(233,165,45)" />
+                  <AiFillStar color="rgb(233,165,45)" />
+                  <AiFillStar color="rgb(233,165,45)" />
+                  <AiFillStar color="rgb(233,165,45)" />
+                  <div className={review_score}>{review.rating}</div>
+                  
+                </div>
+              </div>
+            </div>
+            <div className={review_text}>{review.description}</div>
+          </li>
+        ))}
+      </ul>
+    </div>
     </div>
   );
 }
+
+}
+
+export default SimpleTabs;

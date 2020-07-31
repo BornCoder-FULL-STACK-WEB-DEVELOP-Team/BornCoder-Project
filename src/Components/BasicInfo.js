@@ -3,8 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import {blueGrey} from '@material-ui/core/colors';
-import SimpleTabs from './SimpleTabs'
 import moment from 'moment';
+import {basicinfo} from '../Styles/BasicInfo.module.scss';
 
 
 const useStyles = theme => ({
@@ -42,7 +42,7 @@ class Basicinfo extends React.Component {
     render(){
     const { classes } = this.props;
     return (
-            <div className={classes.root}>
+            <div className={classes.root+" "+basicinfo}>
                 <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
                     <div className="username">
@@ -58,9 +58,6 @@ class Basicinfo extends React.Component {
                     Joined from:{moment(this.props.value.joinDate).format('YYYY-MM-DD')}
                         {/*{this.state.users.joinDate} */}
                     </div>
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <SimpleTabs />
                 </Grid>
                 </Grid>
             </div>      
