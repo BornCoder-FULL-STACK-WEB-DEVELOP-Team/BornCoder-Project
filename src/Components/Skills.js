@@ -11,6 +11,11 @@ const useStyles = theme => ({
     button:{
       backgroundColor:blueGrey[300],
     },
+    upload_button: {
+      '& > *': {
+        margin: theme.spacing(1),
+      },
+    },
   });
 
   class Skills extends React.Component{

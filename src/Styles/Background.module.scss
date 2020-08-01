@@ -27,19 +27,19 @@
 }
 .background_container .avatar{
     position:absolute;
-    left:2vw;
+    left:0.7em;
     bottom:7vh;
 }
 
 .background_container .cloud_upload{
     position:absolute;
-    left:3vw;
+    left:2em;
     bottom:9vh;
 }
 
 .background_container .cloud_upload_background{
     position:absolute;
-    right:8vw;
+    right:4em;
     top:0vh;
 }
 
@@ -47,17 +47,20 @@
     position:absolute;
     right:-3vw;
     top:8vh; 
+    
 }
 
 
 .background_container .upload_button{
     position:absolute;
-    left:10vw;
+    left:10em;
     bottom:9vh;
+  
 }
 
 .background_container .upload_button_background{
     position:absolute;
-    right:0vw;
+    right:0em;
     top:1vh;
+   
 }
