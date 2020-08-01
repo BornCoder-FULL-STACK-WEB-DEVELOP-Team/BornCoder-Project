@@ -1,0 +1,70 @@
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  
+  .content {
+    display: flex;
+    flex-direction: row;
+
+    .leftSide {
+      width: 20%;
+      background-color: #fdfefe;
+    }
+
+    .rightSide {
+      width: 80%;
+      height: 100vh;
+      overflow-y: scroll;
+      background-color: #fff;
+      border-left: 1px solid #bbc2dc;
+
+      .notificationWrapper {
+        padding: 20px;
+        font-size: 16px;
+
+        .messageTitle {
+          padding: 10px 0;
+          font-weight: 500;
+        }
+        .messageContainer {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 10px 0;
+          
+          .messageInfo {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-grow: 1;
+
+            .userAvatar {
+              width: 20px;
+              margin-right: 5px;
+            }
+            .userName {
+              color: #008fb4;
+              font-weight: 500;
+            }
+            .userAction {
+              padding: 0 5px;
+            }
+            .messageTask {
+              color: #008fb4;
+              font-weight: 500;
+              text-decoration: none;
+            }
+          }
+          .messageTime {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

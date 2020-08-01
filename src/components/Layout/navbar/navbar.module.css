@@ -1,0 +1,31 @@
+.linkStyle {
+  color: #535a77;
+  text-decoration: none;
+  padding: 6px;
+  font-size: 12px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.linkStyle:hover,
+.linkStyle:active {
+  color: #008fb4;
+  border-bottom: 3px solid #008fb4;
+}
+
+button {
+  color: #535a77;
+  text-decoration: none;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  background-color: transparent;
+}
+button:hover,
+button:active {
+  color: #008fb4;
+  border-bottom: 3px solid #008fb4;
+}

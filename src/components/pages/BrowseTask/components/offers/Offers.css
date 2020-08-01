@@ -1,0 +1,58 @@
+#reply-image {
+  border-radius: 50%;
+  width: 68px;
+  height: 68px;
+}
+
+.reply-display {
+  display: flex;
+  flex-direction: column;
+}
+
+.reply-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+}
+
+.star {
+  display: flex;
+  flex-direction: row;
+}
+
+.complete-rate {
+  margin-top: 5px;
+}
+
+.reply-name {
+  cursor: pointer;
+  color: #008fb4;
+  margin-top: 7px;
+}
+
+.reply-text {
+  margin-top: 25px;
+  padding: 10px;
+  max-width: 650px;
+  background-color: rgb(246, 248, 253);
+  font-weight: 500;
+}
+
+.reply-score {
+  font-weight: bold;
+  margin-left: 10px;
+}
+.list {
+  list-style-type: none;
+  margin-left: 0;
+  margin-bottom: 50px;
+}
+
+.ul {
+  padding-left: 0px;
+}

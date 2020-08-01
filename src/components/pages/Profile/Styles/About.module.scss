@@ -1,0 +1,17 @@
+@import './variables.scss';
+
+.about{
+    height: 15vh;
+    position: relative;
+}
+
+.about .updatebutton{
+    position:absolute;
+    right:-3vw;
+    top:3vh; 
+}
+
+.about_update{
+    height: 20vh;
+    //background-color: red;
+}
